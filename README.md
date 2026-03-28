@@ -1,20 +1,49 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+Project Structure
+AarogyaVaani/
+├── server.ts              # Backend (Express APIs)
+├── src/
+│   ├── App.tsx            # Main React UI
+│   ├── main.tsx           # Entry point
+│   └── index.css          # Styling
+├── package.json
+├── vite.config.ts
+└── .env
+⚙️ Setup Instructions
+1️⃣ Clone Repository
+git clone https://github.com/kavyanjalilingam/aarogyavaani.git
+cd aarogyavaani
+2️⃣ Install Dependencies
+npm install
+3️⃣ Setup Ollama (IMPORTANT)
 
-# Run and deploy your AI Studio app
+Make sure you have Ollama installed and running:
 
-This contains everything you need to run your app locally.
+ollama run mistral
 
-View your app in AI Studio: https://ai.studio/apps/1fcdab7b-8e3a-4efb-b630-24eb359281c6
+or
 
-## Run Locally
+ollama run phi3
 
-**Prerequisites:**  Node.js
+Ensure Ollama is running on:
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+http://localhost:11434
+4️⃣ Run Backend
+npm run server
+5️⃣ Run Frontend
+npm run dev
+6️⃣ Open App
+http://localhost:3000
+🔌 API Endpoints
+✅ Working
+Endpoint	Method	Description
+/api/health	GET	Server status
+/api/chat-enhanced	POST	Main AI chat
+/api/search-facilities	POST	Hospital search
+/api/ocr	POST	Prescription OCR
+/api/translate	POST	Translation
+/api/detect-language	POST	Language detection
+❌ Missing (Phase 2)
+Endpoint	Purpose
+/api/transcribe	Speech-to-Text
+/api/tts	Text-to-Speech
+/api/specialist	Doctor recommendation
